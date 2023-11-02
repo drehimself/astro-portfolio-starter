@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props
+const currentYear = new Date().getFullYear()
 
 import { Image } from 'astro:assets'
 import logoForLightMode from '@/images/astro-logo-for-light-mode.svg'
@@ -54,7 +55,9 @@ import logoForLightMode from '@/images/astro-logo-for-light-mode.svg'
       <div
         class="container mx-auto flex flex-col sm:flex-row items-center justify-between py-8"
       >
-        <div class="mb-8 sm:mb-0">Copyright 2023. All rights reserved.</div>
+        <div class="mb-8 sm:mb-0">
+          Copyright {currentYear}. All rights reserved.
+        </div>
         <ul class="flex items-center space-x-8">
           <li>
             <a
