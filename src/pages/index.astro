@@ -5,6 +5,8 @@ import { Image } from 'astro:assets'
 import developerImage from '@/images/developer.svg'
 import mindMapImage from '@/images/mind-map.svg'
 import codeReviewImage from '@/images/code-review.svg'
+import dotsTriangle from '@/images/dots-triangle.svg'
+import dotsRectangle from '@/images/dots-rectangle.svg'
 ---
 
 <Layout title="Astro Portfolio Starter">
@@ -48,11 +50,8 @@ import codeReviewImage from '@/images/code-review.svg'
     >
       <h3 class="font-bold">Here are some projects I've worked on:</h3>
 
-      <div class="absolute right-0 transform rotate-180">
-        <div>hihi</div>
-        <!-- <svg width="170px" height="170px"
-          ><use xlink:href="#dots-triangle"></use></svg
-        > -->
+      <div class="absolute right-0 transform rotate-180 translate-x-[120%]">
+        <Image src={dotsTriangle} alt="dots" />
       </div>
 
       <ul class="mt-10 space-y-6">
@@ -106,22 +105,20 @@ import codeReviewImage from '@/images/code-review.svg'
     <section class="about max-w-3xl mx-auto relative">
       <h3 class="font-bold">Get to know me</h3>
 
-      <div class="absolute left-0 transform -translate-x-full">
-        <div>howdy</div>
-        <!-- <svg width="170px" height="170px"><use xlink:href="#dots-triangle" /></svg> -->
-      </div>
       <div class="flex items-center mt-6">
         <img
           src="https://i.pravatar.cc/300"
           alt="avatar"
           class="rounded-full w-32 h-32"
         />
-        <p class="ml-6">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
-          quam praesentium eligendi autem voluptate vero quo voluptatem, qui
-          possimus debitis iste amet ea voluptatum aut consectetur. Velit quos
-          at explicabo?
-        </p>
+        <div>
+          <p class="ml-6">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
+            quam praesentium eligendi autem voluptate vero quo voluptatem, qui
+            possimus debitis iste amet ea voluptatum aut consectetur. Velit quos
+            at explicabo?
+          </p>
+        </div>
       </div>
     </section>
 
@@ -129,11 +126,8 @@ import codeReviewImage from '@/images/code-review.svg'
       <div class="max-w-3xl mx-auto relative">
         <h3 class="font-bold">Contact me</h3>
 
-        <div class="absolute right-0 top-0 transform rotate-180">
-          <div>yoooo</div>
-          <!-- <svg width="170px" height="170px"
-            ><use xlink:href="#dots-triangle"></use></svg
-          > -->
+        <div class="absolute left-0 transform -translate-x-[120%] rotate-180">
+          <Image src={dotsTriangle} alt="dots" />
         </div>
 
         <p class="mt-6">
@@ -194,7 +188,7 @@ import codeReviewImage from '@/images/code-review.svg'
       </div>
     </section>
 
-    <section class="contact bg-gray-200 text-center py-12 pb-24">
+    <section class="contact bg-gray-200 text-center pt-12">
       <div class="max-w-xl mx-auto">
         <h3 class="text-xl font-bold">Join my newsletter</h3>
         <p class="mt-4">
@@ -207,13 +201,17 @@ import codeReviewImage from '@/images/code-review.svg'
             name="email-newsletter"
             id="email-newsletter"
             placeholder="Your email address"
-            class="block flex-1 w-full rounded-md border-0 text-gray-900 shadow sm:rounded-r-none placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-green-600 p-4"
+            class="z-50 block flex-1 w-full rounded-md border-0 text-gray-900 shadow sm:rounded-r-none placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-green-600 p-4"
           />
           <button
-            class="flex-2f uppercase bg-green-700 text-white rounded sm:rounded-l-none fpy-3 px-8 tracking-wide shadow focus:outline-none hover:bg-green-800 focus:bg-green-800 z-10 w-full sm:w-auto sm:mt-0"
+            class="z-50 flex-2 uppercase bg-green-700 text-white rounded sm:rounded-l-none fpy-3 px-8 tracking-wide shadow focus:outline-none hover:bg-green-800 focus:bg-green-800 z-10 w-full sm:w-auto sm:mt-0"
             ><span>Subscribe</span>
           </button>
         </form>
+      </div>
+
+      <div class="max-w-3xl mx-auto -mt-12">
+        <Image src={dotsRectangle} alt="dots" />
       </div>
     </section>
   </main>
