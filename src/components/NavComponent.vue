@@ -14,7 +14,7 @@ function toggle() {
     class="fixed bg-white top-0 left-0 w-full z-40 border-t-[14px] border-green-700"
   >
     <nav
-      class="container mx-auto flex flex-wrap items-center justify-between py-6"
+      class="container mx-auto flex flex-wrap items-center justify-between py-6 px-4 xl:px-0"
     >
       <div>
         <a href="/">

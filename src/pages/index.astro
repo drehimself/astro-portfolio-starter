@@ -12,11 +12,11 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
 <Layout title="Astro Portfolio Starter">
   <main>
     <section
-      class="hero mx-auto max-w-3xl flex flex-col sm:flex-row justify-between py-16 mt-24"
+      class="hero mx-auto max-w-3xl flex flex-col sm:flex-row justify-between py-16 mt-24 px-4 xl:px-0"
     >
       <div class="text-4xl font-bold text-center sm:text-left">
         <div class="leading-tight">Astro Portfolio Starter</div>
-        <div class="text-green-700 leading-tight">
+        <div class="text-green-700 leading-tight sm:mr-16">
           Powered by Astro, Tailwind &amp; Vue
         </div>
       </div>
@@ -26,7 +26,7 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
     </section>
     <!-- end hero -->
 
-    <section class="max-w-3xl mx-auto">
+    <section class="max-w-3xl mx-auto px-4 xl:px-4">
       <p class="">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore non
         ipsa sed hic illum ex corrupti quasi, corporis consequatur praesentium
@@ -46,12 +46,12 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
     </section>
 
     <section
-      class="projects max-w-3xl mx-auto text-xl border-t border-gray-300 border-b py-16 mb-16 relative"
+      class="projects max-w-3xl mx-auto border-t border-gray-300 border-b py-16 mb-16 relative px-4 xl:px-0"
     >
       <h3 class="font-bold">Here are some projects I've worked on:</h3>
 
       <div class="absolute right-0 transform rotate-180 translate-x-[120%]">
-        <Image src={dotsTriangle} alt="dots" />
+        <Image src={dotsTriangle} alt="dots" class="hidden xl:block" />
       </div>
 
       <ul class="mt-10 space-y-6">
@@ -102,17 +102,17 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
       </ul>
     </section>
 
-    <section class="about max-w-3xl mx-auto relative">
+    <section class="about max-w-3xl mx-auto relative px-4 xl:px-0">
       <h3 class="font-bold">Get to know me</h3>
 
-      <div class="flex items-center mt-6">
+      <div class="flex items-center flex-col sm:flex-row mt-6">
         <img
           src="https://i.pravatar.cc/300"
           alt="avatar"
           class="rounded-full w-32 h-32"
         />
         <div>
-          <p class="ml-6">
+          <p class="sm:ml-6 mt-6 sm:mt-0">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
             quam praesentium eligendi autem voluptate vero quo voluptatem, qui
             possimus debitis iste amet ea voluptatum aut consectetur. Velit quos
@@ -122,7 +122,7 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
       </div>
     </section>
 
-    <section class="contact bg-gray-100 mt-10 py-12">
+    <section class="contact bg-gray-100 mt-10 py-12 px-4 xl:px-0">
       <div class="max-w-3xl mx-auto relative">
         <h3 class="font-bold">Contact me</h3>
 
@@ -132,18 +132,22 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
 
         <p class="mt-6">
           Static sites cannot submit forms on their own. However, services like
-          <a href="" class="font-semibold text-green-700 hover:underline"
-            >Netlify Forms</a
-          > or
-
-          <a href="" class="font-semibold text-green-700 hover:underline"
-            >FormSpree</a
+          <a
+            href="https://www.netlify.com/docs/form-handling"
+            class="font-semibold text-green-700 hover:underline"
+          >
+            Netlify Forms
+          </a>
+           or
+          <a
+            href="http://localhost:4321/"
+            class="font-semibold text-green-700 hover:underline">FormSpree</a
           > can help you do this without a backend.
         </p>
 
         <div class="mt-12">
           <form action="#" class="grid grid-cols-2 gap-6">
-            <div class="col-span-1">
+            <div class="col-span-2 sm:col-span-1">
               <label for="name" class="block">Name</label>
               <input
                 type="text"
@@ -153,7 +157,7 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
                 class="block w-full rounded-md border-0 text-gray-900 shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-green-600 p-4 mt-2"
               />
             </div>
-            <div class="col-span-1">
+            <div class="col-span-2 sm:col-span-1">
               <label for="email" class="block">Email</label>
               <input
                 type="text"
@@ -188,7 +192,7 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
       </div>
     </section>
 
-    <section class="contact bg-gray-200 text-center pt-12">
+    <section class="contact bg-gray-200 text-center pt-12 px-4 xl:px-0">
       <div class="max-w-xl mx-auto">
         <h3 class="text-xl font-bold">Join my newsletter</h3>
         <p class="mt-4">
@@ -204,7 +208,7 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
             class="z-50 block flex-1 w-full rounded-md border-0 text-gray-900 shadow sm:rounded-r-none placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-green-600 p-4"
           />
           <button
-            class="z-50 flex-2 uppercase bg-green-700 text-white rounded sm:rounded-l-none fpy-3 px-8 tracking-wide shadow focus:outline-none hover:bg-green-800 focus:bg-green-800 w-full sm:w-auto sm:mt-0"
+            class="z-50 flex-2 uppercase bg-green-700 text-white rounded sm:rounded-l-none fpy-3 px-8 tracking-wide shadow focus:outline-none hover:bg-green-800 focus:bg-green-800 w-full sm:w-auto mt-4 sm:mt-0 py-2"
             ><span>Subscribe</span>
           </button>
         </form>

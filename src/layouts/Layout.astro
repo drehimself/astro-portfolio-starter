@@ -21,11 +21,12 @@ import NavComponent from '@/components/NavComponent.vue'
   </head>
   <body class="font-sans text-lg text-gray-800 antialiased">
     <NavComponent client:load />
+
     <slot />
 
     <footer class="bg-green-700 text-base text-white">
       <div
-        class="container mx-auto flex flex-col sm:flex-row items-center justify-between py-8"
+        class="container mx-auto flex flex-col sm:flex-row items-center justify-between py-8 px-0 sm:px-4"
       >
         <div class="mb-8 sm:mb-0">
           Copyright {currentYear}. All rights reserved.
