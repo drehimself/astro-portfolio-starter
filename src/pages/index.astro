@@ -7,10 +7,10 @@ import mindMapImage from '@/images/mind-map.svg'
 import codeReviewImage from '@/images/code-review.svg'
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Astro Portfolio Starter">
   <main>
     <section
-      class="hero mx-auto max-w-4xl flex flex-col sm:flex-row justify-between py-16"
+      class="hero mx-auto max-w-3xl flex flex-col sm:flex-row justify-between py-16"
     >
       <div class="text-4xl font-bold text-center sm:text-left">
         <div class="leading-tight">Astro Portfolio Starter</div>
@@ -24,19 +24,13 @@ import codeReviewImage from '@/images/code-review.svg'
     </section>
     <!-- end hero -->
 
-    <section class="max-w-4xl mx-auto">
+    <section class="max-w-3xl mx-auto">
       <p class="">
-        This gridsome theme was forked from my <a
-          href="https://andremadarang.com">personal website</a
-        >. I added more features and decided to release it as an open source
-        project. Check it out on <a
-          href="https://github.com/drehimself/gridsome-portfolio-starter"
-          >GitHub</a
-        > or check out the <a href="https://www.youtube.com/watch?v=uHo6o1TNQeE"
-          >screencast I did</a
-        >. Feel free to use it for your own site or projects! Lorem, ipsum dolor
-        sit amet consectetur adipisicing elit. Minima, repellat. Dolores iure,
-        quas perspiciatis rerum quaerat atque eum repellat autem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore non
+        ipsa sed hic illum ex corrupti quasi, corporis consequatur praesentium
+        fugiat perferendis sunt molestias temporibus placeat magnam aspernatur
+        sequi iure pariatur reprehenderit maxime doloremque ut facilis illo.
+        Corrupti, vel et?
       </p>
 
       <div class="flex justify-between items-center my-14">
@@ -50,15 +44,22 @@ import codeReviewImage from '@/images/code-review.svg'
     </section>
 
     <section
-      class="projects max-w-4xl mx-auto text-xl border-t border-gray-300 border-b py-16 mb-16 relative"
+      class="projects max-w-3xl mx-auto text-xl border-t border-gray-300 border-b py-16 mb-16 relative"
     >
       <h3 class="font-bold">Here are some projects I've worked on:</h3>
+
+      <div class="absolute right-0 transform rotate-180">
+        <div>hihi</div>
+        <!-- <svg width="170px" height="170px"
+          ><use xlink:href="#dots-triangle"></use></svg
+        > -->
+      </div>
 
       <ul class="mt-10 space-y-6">
         <li class="flex items-start">
           <IconCheckmark />
           <span class="ml-4">
-            <p class="text-xl font-semibold">Project Name 1</p>
+            <p class="font-semibold">Project Name 1</p>
             <p class="text-gray-600 mt-2">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Veritatis ad neque doloribus quod exercitationem est nulla
@@ -69,7 +70,7 @@ import codeReviewImage from '@/images/code-review.svg'
         <li class="flex items-start">
           <IconCheckmark />
           <span class="ml-4">
-            <p class="text-xl font-semibold">Project Name 2</p>
+            <p class="font-semibold">Project Name 2</p>
             <p class="text-gray-600 mt-2">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Veritatis ad neque doloribus quod exercitationem est nulla
@@ -80,7 +81,7 @@ import codeReviewImage from '@/images/code-review.svg'
         <li class="flex items-start">
           <IconCheckmark />
           <span class="ml-4">
-            <p class="text-xl font-semibold">Project Name 3</p>
+            <p class="font-semibold">Project Name 3</p>
             <p class="text-gray-600 mt-2">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Veritatis ad neque doloribus quod exercitationem est nulla
@@ -91,7 +92,7 @@ import codeReviewImage from '@/images/code-review.svg'
         <li class="flex items-start">
           <IconCheckmark />
           <span class="ml-4">
-            <p class="text-xl font-semibold">Project Name 4</p>
+            <p class="font-semibold">Project Name 4</p>
             <p class="text-gray-600 mt-2">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Veritatis ad neque doloribus quod exercitationem est nulla
@@ -102,8 +103,13 @@ import codeReviewImage from '@/images/code-review.svg'
       </ul>
     </section>
 
-    <section class="about max-w-4xl mx-auto">
+    <section class="about max-w-3xl mx-auto relative">
       <h3 class="font-bold">Get to know me</h3>
+
+      <div class="absolute left-0 transform -translate-x-full">
+        <div>howdy</div>
+        <!-- <svg width="170px" height="170px"><use xlink:href="#dots-triangle" /></svg> -->
+      </div>
       <div class="flex items-center mt-6">
         <img
           src="https://i.pravatar.cc/300"
@@ -120,11 +126,25 @@ import codeReviewImage from '@/images/code-review.svg'
     </section>
 
     <section class="contact bg-gray-100 mt-10 py-12">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-3xl mx-auto relative">
         <h3 class="font-bold">Contact me</h3>
+
+        <div class="absolute right-0 top-0 transform rotate-180">
+          <div>yoooo</div>
+          <!-- <svg width="170px" height="170px"
+            ><use xlink:href="#dots-triangle"></use></svg
+          > -->
+        </div>
+
         <p class="mt-6">
           Static sites cannot submit forms on their own. However, services like
-          Netlify Forms or FormSpree can help you do this without a backend.
+          <a href="" class="font-semibold text-green-700 hover:underline"
+            >Netlify Forms</a
+          > or
+
+          <a href="" class="font-semibold text-green-700 hover:underline"
+            >FormSpree</a
+          > can help you do this without a backend.
         </p>
 
         <div class="mt-12">
@@ -136,7 +156,7 @@ import codeReviewImage from '@/images/code-review.svg'
                 name="name"
                 id="name"
                 placeholder="Your name"
-                class="block w-full rounded-md border-0 text-gray-900 shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4 mt-2"
+                class="block w-full rounded-md border-0 text-gray-900 shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-green-600 p-4 mt-2"
               />
             </div>
             <div class="col-span-1">
@@ -146,7 +166,7 @@ import codeReviewImage from '@/images/code-review.svg'
                 name="email"
                 id="email"
                 placeholder="Your email"
-                class="block w-full rounded-md border-0 text-gray-900 shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4 mt-2"
+                class="block w-full rounded-md border-0 text-gray-900 shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-green-600 p-4 mt-2"
               />
             </div>
 
@@ -156,7 +176,7 @@ import codeReviewImage from '@/images/code-review.svg'
                 rows="8"
                 name="message"
                 id="message"
-                class="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4 mt-2"
+                class="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-green-600 p-4 mt-2"
                 placeholder="Enter your message here"></textarea>
             </div>
 
@@ -176,7 +196,7 @@ import codeReviewImage from '@/images/code-review.svg'
 
     <section class="contact bg-gray-200 text-center py-12 pb-24">
       <div class="max-w-xl mx-auto">
-        <h3 class="font-bold">Join my newsletter</h3>
+        <h3 class="text-xl font-bold">Join my newsletter</h3>
         <p class="mt-4">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
           officia nisi eos porro, repellendus commodi debitis.
@@ -187,7 +207,7 @@ import codeReviewImage from '@/images/code-review.svg'
             name="email-newsletter"
             id="email-newsletter"
             placeholder="Your email address"
-            class="block flex-1 w-full rounded-md border-0 text-gray-900 shadow sm:rounded-r-none placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4"
+            class="block flex-1 w-full rounded-md border-0 text-gray-900 shadow sm:rounded-r-none placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-green-600 p-4"
           />
           <button
             class="flex-2f uppercase bg-green-700 text-white rounded sm:rounded-l-none fpy-3 px-8 tracking-wide shadow focus:outline-none hover:bg-green-800 focus:bg-green-800 z-10 w-full sm:w-auto sm:mt-0"
