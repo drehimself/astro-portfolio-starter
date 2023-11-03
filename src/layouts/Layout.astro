@@ -6,8 +6,7 @@ interface Props {
 const { title } = Astro.props
 const currentYear = new Date().getFullYear()
 
-import { Image } from 'astro:assets'
-import logoForLightMode from '@/images/astro-logo-for-light-mode.svg'
+import NavComponent from '@/components/NavComponent.vue'
 ---
 
 <!doctype html>
@@ -21,34 +20,7 @@ import logoForLightMode from '@/images/astro-logo-for-light-mode.svg'
     <title>{title}</title>
   </head>
   <body class="font-sans text-lg text-gray-800 antialiased">
-    <header class="border-t-[14px] border-green-700">
-      <nav
-        class="container mx-auto flex flex-wrap items-center justify-between py-8"
-      >
-        <div>
-          <Image src={logoForLightMode} alt="logo" class="w-auto h-14" />
-        </div>
-
-        <div class="block lg:hidden">hamburger</div>
-        <ul
-          class="uppercase tracking-wide font-bold w-full block flex-grow lg:space-x-8 space-y-6 lg:space-y-0 lg:flex lg:flex-initial lg:w-auto items-center mt-8 lg:mt-0"
-        >
-          <li>ThmSwtch</li>
-          <li>
-            <a href="/#projects" class="hover:text-gray-600">Projects</a>
-          </li>
-          <li>
-            <a href="/#projects" class="hover:text-gray-600">About</a>
-          </li>
-          <li>
-            <a href="/#projects" class="hover:text-gray-600">Contact</a>
-          </li>
-          <li>
-            <a href="/#projects" class="hover:text-gray-600">Blog</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <NavComponent client:load />
     <slot />
 
     <footer class="bg-green-700 text-base text-white">
