@@ -1,12 +1,16 @@
 <script setup>
 import { ref } from 'vue'
 import logoForLightMode from '@/images/astro-logo-for-light-mode.svg'
+import { vOnClickOutside } from '@vueuse/components'
 
 const navOpen = ref(false)
+const ignoreElRef = ref()
 
-function toggle() {
+function toggleNav() {
   navOpen.value = !navOpen.value
 }
+
+const hideNav = [() => (navOpen.value = false), { ignore: [ignoreElRef] }]
 </script>
 
 <template>
@@ -23,8 +27,13 @@ function toggle() {
       </div>
 
       <div class="block lg:hidden">
-        <button @click="toggle">
+        <button
+          ref="ignoreElRef"
+          @click="toggleNav"
+          @keydown.esc="navOpen = false"
+        >
           <svg
+            v-if="navOpen === false"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -39,11 +48,29 @@ function toggle() {
               d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
             ></path>
           </svg>
+          <svg
+            v-else
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="w-8 h-8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
         </button>
       </div>
       <ul
         class="uppercase tracking-wide font-bold w-full block flex-grow lg:space-x-8 space-y-6 lg:space-y-0 lg:flex lg:flex-initial lg:w-auto items-center mt-8 lg:mt-0"
         :class="[navOpen ? 'block' : 'hidden']"
+        v-on-click-outside="hideNav"
+        @keydown.esc="navOpen = false"
       >
         <li>ThmSwtch</li>
         <li>
