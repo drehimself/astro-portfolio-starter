@@ -77,13 +77,13 @@ const hideNav = [() => (navOpen.value = false), { ignore: [ignoreElRef] }]
           <a href="/#projects" class="hover:text-gray-600">Projects</a>
         </li>
         <li>
-          <a href="/#projects" class="hover:text-gray-600">About</a>
+          <a href="/#about" class="hover:text-gray-600">About</a>
         </li>
         <li>
-          <a href="/#projects" class="hover:text-gray-600">Contact</a>
+          <a href="/#contact" class="hover:text-gray-600">Contact</a>
         </li>
         <li>
-          <a href="/#projects" class="hover:text-gray-600">Blog</a>
+          <a href="/blog" class="hover:text-gray-600">Blog</a>
         </li>
       </ul>
     </nav>
