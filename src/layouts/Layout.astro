@@ -20,10 +20,12 @@ import NavComponent from '@/components/NavComponent.vue'
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="font-sans text-lg text-gray-800 antialiased">
+  <body class="font-sans text-lg text-gray-800 antialiased dark:bg-slate-800">
     <NavComponent client:only />
 
-    <slot />
+    <div class="min-h-screen">
+      <slot />
+    </div>
 
     <footer class="bg-green-700 text-base text-white">
       <div
@@ -108,3 +110,9 @@ import NavComponent from '@/components/NavComponent.vue'
     </footer>
   </body>
 </html>
+
+<script is:inline>
+  if (localStorage.theme === 'dark') {
+    document.documentElement.classList.add('dark')
+  }
+</script>
