@@ -7,6 +7,7 @@ import mindMapImage from '@/images/mind-map.svg'
 import codeReviewImage from '@/images/code-review.svg'
 import dotsTriangle from '@/images/dots-triangle.svg'
 import dotsRectangle from '@/images/dots-rectangle.svg'
+import avatarImage from '@/images/avatar.png'
 ---
 
 <Layout title="Astro Portfolio Starter">
@@ -51,7 +52,7 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
 
     <section
       id="projects"
-      class="scroll-mt-16 max-w-3xl mx-auto border-t border-b border-gray-300 dark:border-gray-600 py-16 mb-16 relative px-4 xl:px-0"
+      class="scroll-mt-16 max-w-3xl mx-auto border-t border-b border-gray-300 dark:border-gray-700 py-16 mb-16 relative px-4 xl:px-0"
     >
       <h3 class="dark:text-gray-100 font-bold">
         Here are some projects I've worked on:
@@ -124,11 +125,7 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
       <h3 class="dark:text-gray-100 font-bold">Get to know me</h3>
 
       <div class="flex items-center flex-col sm:flex-row mt-6">
-        <img
-          src="https://i.pravatar.cc/300"
-          alt="avatar"
-          class="rounded-full w-32 h-32"
-        />
+        <Image src={avatarImage} alt="avatar" class="rounded-full w-32 h-32" />
         <div>
           <p class="dark:text-gray-100 sm:ml-6 mt-6 sm:mt-0">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
@@ -138,64 +135,74 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
           </p>
         </div>
       </div>
+
+      <div class="my-16">
+        <iframe
+          class="w-full aspect-video"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=1BVDnJeZozmDWGGk"
+          allowfullscreen></iframe>
+      </div>
     </section>
 
     <section
       id="contact"
-      class="scroll-mt-28 bg-gray-100 mt-10 py-12 px-4 xl:px-0"
+      class="scroll-mt-28 bg-gray-100 dark:bg-slate-800 mt-10 py-12 px-4 xl:px-0"
     >
       <div class="max-w-3xl mx-auto relative">
-        <h3 class="font-bold">Contact me</h3>
+        <h3 class="font-bold dark:text-gray-100">Contact me</h3>
 
         <div class="absolute left-0 transform -translate-x-[120%] rotate-180">
           <Image src={dotsTriangle} alt="dots" />
         </div>
 
-        <p class="mt-6">
+        <p class="dark:text-gray-100 mt-6">
           Static sites cannot submit forms on their own. However, services like
           <a
             href="https://www.netlify.com/docs/form-handling"
-            class="font-semibold text-indigo-700 hover:underline"
+            class="font-semibold text-indigo-700 dark:text-indigo-400 hover:underline"
           >
             Netlify Forms
           </a>
            or
           <a
             href="http://localhost:4321/"
-            class="font-semibold text-indigo-700 hover:underline">FormSpree</a
+            class="font-semibold text-indigo-700 dark:text-indigo-400 hover:underline"
+            >FormSpree</a
           > can help you do this without a backend.
         </p>
 
         <div class="mt-12">
           <form action="#" class="grid grid-cols-2 gap-6">
             <div class="col-span-2 sm:col-span-1">
-              <label for="name" class="block">Name</label>
+              <label for="name" class="block dark:text-gray-100">Name</label>
               <input
                 type="text"
                 name="name"
                 id="name"
                 placeholder="Your name"
-                class="block w-full rounded-md border-0 text-gray-900 shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4 mt-2"
+                class="block dark:bg-slate-700 dark:text-gray-100 w-full rounded-md border-0 text-gray-900 shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4 mt-2"
               />
             </div>
             <div class="col-span-2 sm:col-span-1">
-              <label for="email" class="block">Email</label>
+              <label for="email" class="block dark:text-gray-100">Email</label>
               <input
                 type="text"
                 name="email"
                 id="email"
                 placeholder="Your email"
-                class="block w-full rounded-md border-0 text-gray-900 shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4 mt-2"
+                class="block dark:bg-slate-700 dark:text-gray-100 w-full rounded-md border-0 text-gray-900 shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4 mt-2"
               />
             </div>
 
             <div class="col-span-2">
-              <label for="message" class="block">Message</label>
+              <label for="message" class="block dark:text-gray-100"
+                >Message</label
+              >
               <textarea
                 rows="8"
                 name="message"
                 id="message"
-                class="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4 mt-2"
+                class="block dark:bg-slate-700 dark:text-gray-100 w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-slate-700 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 dark:focus:ring-indigo-600 p-4 mt-2"
                 placeholder="Enter your message here"></textarea>
             </div>
 
@@ -213,10 +220,12 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
       </div>
     </section>
 
-    <section class="contact bg-gray-200 text-center pt-12 px-4 xl:px-0">
+    <section
+      class="newsletter bg-gray-200 dark:bg-slate-900 text-center pt-12 px-4 xl:px-0"
+    >
       <div class="max-w-xl mx-auto">
-        <h3 class="text-xl font-bold">Join my newsletter</h3>
-        <p class="mt-4">
+        <h3 class="text-xl font-bold dark:text-gray-100">Join my newsletter</h3>
+        <p class="dark:text-gray-200 mt-4">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
           officia nisi eos porro, repellendus commodi debitis.
         </p>
@@ -226,7 +235,7 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
             name="email-newsletter"
             id="email-newsletter"
             placeholder="Your email address"
-            class="z-50 block flex-1 w-full rounded-md border-0 text-gray-900 shadow sm:rounded-r-none placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4"
+            class="z-50 block dark:bg-slate-700 dark:text-gray-100 flex-1 w-full rounded-md border-0 text-gray-900 shadow sm:rounded-r-none placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4"
           />
           <button
             class="z-50 flex-2 uppercase bg-indigo-700 text-white rounded sm:rounded-l-none fpy-3 px-8 tracking-wide shadow focus:outline-none hover:bg-indigo-900 focus:bg-indigo-900 w-full sm:w-auto mt-4 sm:mt-0 py-2"
