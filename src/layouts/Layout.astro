@@ -4,10 +4,9 @@ interface Props {
 }
 
 const { title } = Astro.props
-const currentYear = new Date().getFullYear()
 
 import '@fontsource-variable/inter'
-import NavComponent from '@/components/NavComponent.vue'
+import NavComponent from '@/components/NavComponent.astro'
 ---
 
 <!doctype html>
@@ -21,7 +20,7 @@ import NavComponent from '@/components/NavComponent.vue'
     <title>{title}</title>
   </head>
   <body class="font-sans text-lg text-gray-800 antialiased dark:bg-slate-800">
-    <NavComponent client:only />
+    <NavComponent />
 
     <div class="min-h-screen">
       <slot />
@@ -32,7 +31,7 @@ import NavComponent from '@/components/NavComponent.vue'
         class="container mx-auto flex flex-col sm:flex-row items-center justify-between py-8 px-0 sm:px-4"
       >
         <div class="mb-8 sm:mb-0">
-          Copyright {currentYear}. All rights reserved.
+          Copyright {new Date().getFullYear()}. All rights reserved.
         </div>
         <ul class="flex items-center space-x-8">
           <li>
@@ -110,9 +109,3 @@ import NavComponent from '@/components/NavComponent.vue'
     </footer>
   </body>
 </html>
-
-<script is:inline>
-  if (localStorage.theme === 'dark') {
-    document.documentElement.classList.add('dark')
-  }
-</script>

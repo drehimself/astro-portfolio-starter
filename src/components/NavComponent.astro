@@ -1,0 +1,207 @@
+---
+import { Image } from 'astro:assets'
+import logoForLight from '@/images/astro-logo-for-light-mode.svg'
+import logoForDark from '@/images/astro-logo-for-dark-mode.svg'
+---
+
+<header
+  class="fixed bg-white dark:bg-slate-800 dark:text-white top-0 left-0 w-full z-40 border-t-[14px] border-green-700"
+>
+  <nav
+    class="container mx-auto flex flex-wrap items-center justify-between py-6 px-4 xl:px-0"
+  >
+    <div>
+      <a href="/">
+        <Image
+          src={logoForLight}
+          alt="logo"
+          id="logoForLight"
+          class="w-auto h-12 hidden"
+        />
+        <Image
+          src={logoForDark}
+          alt="logo"
+          id="logoForDark"
+          class="w-auto h-12 hidden"
+        />
+      </a>
+    </div>
+
+    <div class="block lg:hidden">
+      <button id="hamburgerMenu">
+        <svg
+          id="hamburgerIcon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+          class="w-8 h-8"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+    <ul
+      id="mobileNav"
+      class="hidden uppercase tracking-wide font-bold w-full flex-grow lg:space-x-8 space-y-6 lg:space-y-0 lg:flex lg:flex-initial lg:w-auto items-center mt-8 lg:mt-0"
+    >
+      <li>
+        <a href="#" class="dark:hover:text-gray-300" id="themeToggle">
+          <svg
+            id="sunIcon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="hidden w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+            ></path>
+          </svg>
+          <svg
+            id="moonIcon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+            class="hidden w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+            ></path>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="/#projects" class="menuItem dark:hover:text-gray-300"
+          >Projects</a
+        >
+      </li>
+      <li>
+        <a href="/#about" class="menuItem dark:hover:text-gray-300">About</a>
+      </li>
+      <li>
+        <a href="/#contact" class="menuItem dark:hover:text-gray-300">Contact</a
+        >
+      </li>
+      <li>
+        <a href="/blog" class="menuItem dark:hover:text-gray-300">Blog</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script is:inline>
+  const moonIcon = document.querySelector('#moonIcon')
+  const sunIcon = document.querySelector('#sunIcon')
+  const logoForLight = document.querySelector('#logoForLight')
+  const logoForDark = document.querySelector('#logoForDark')
+
+  const themeToggle = document.querySelector('#themeToggle')
+  const mobileNav = document.querySelector('#mobileNav')
+  const hamburgerMenu = document.querySelector('#hamburgerMenu')
+
+  const theme = getTheme()
+  setInitialTheme(theme)
+
+  themeToggle.addEventListener('click', handleToggleTheme)
+
+  hamburgerMenu.addEventListener('click', handleToggleMobileNav)
+
+  document.addEventListener('keydown', handleEscapeKeyPress)
+
+  mobileNav.addEventListener('click', handleMobileNavClick)
+
+  document.addEventListener('click', handleClickOutside)
+
+  function handleClickOutside(event) {
+    const isClickInside = mobileNav.contains(event.target)
+
+    if (!isClickInside) {
+      if (!hamburgerMenu.contains(event.target)) {
+        mobileNav.classList.add('hidden')
+      }
+    }
+  }
+
+  function handleMobileNavClick(event) {
+    if (
+      event.target.tagName === 'A' ||
+      event.target.classList.contains('menuItem')
+    ) {
+      mobileNav.classList.add('hidden')
+    }
+  }
+
+  function handleEscapeKeyPress(event) {
+    if (event.key === 'Escape') {
+      mobileNav.classList.add('hidden')
+    }
+  }
+
+  function handleToggleMobileNav() {
+    mobileNav.classList.toggle('hidden')
+  }
+
+  function setInitialTheme(theme) {
+    if (theme === 'light') {
+      document.documentElement.classList.remove('dark')
+      logoForLight.classList.remove('hidden')
+      moonIcon.classList.remove('hidden')
+    } else {
+      document.documentElement.classList.add('dark')
+      logoForDark.classList.remove('hidden')
+      sunIcon.classList.remove('hidden')
+    }
+
+    window.localStorage.setItem('theme', theme)
+  }
+
+  function getTheme() {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme')
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark'
+    }
+    return 'light'
+  }
+
+  function handleToggleTheme(e) {
+    e.preventDefault()
+
+    document.documentElement.classList.toggle('dark')
+
+    const isDark = document.documentElement.classList.contains('dark')
+
+    localStorage.setItem('theme', isDark ? 'dark' : 'light')
+
+    if (isDark) {
+      logoForDark.classList.remove('hidden')
+      logoForLight.classList.add('hidden')
+      moonIcon.classList.add('hidden')
+      sunIcon.classList.remove('hidden')
+    } else {
+      logoForDark.classList.add('hidden')
+      logoForLight.classList.remove('hidden')
+      moonIcon.classList.remove('hidden')
+      sunIcon.classList.add('hidden')
+    }
+
+    mobileNav.classList.add('hidden')
+  }
+</script>
