@@ -15,8 +15,12 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
       class="hero mx-auto max-w-3xl flex flex-col sm:flex-row justify-between py-16 mt-24 px-4 xl:px-0"
     >
       <div class="text-4xl font-bold text-center sm:text-left">
-        <div class="leading-tight">Astro Portfolio Starter</div>
-        <div class="text-green-700 leading-tight sm:mr-16">
+        <div class="leading-tight dark:text-gray-100">
+          Astro Portfolio Starter
+        </div>
+        <div
+          class="text-indigo-700 dark:text-indigo-500 leading-tight sm:mr-16"
+        >
           Powered by Astro and Tailwind CSS
         </div>
       </div>
@@ -27,7 +31,7 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
     <!-- end hero -->
 
     <section class="max-w-3xl mx-auto px-4 xl:px-0">
-      <p>
+      <p class="dark:text-gray-100">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore non
         ipsa sed hic illum ex corrupti quasi, corporis consequatur praesentium
         fugiat perferendis sunt molestias temporibus placeat magnam aspernatur
@@ -47,20 +51,24 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
 
     <section
       id="projects"
-      class="scroll-mt-16 max-w-3xl mx-auto border-t border-gray-300 border-b py-16 mb-16 relative px-4 xl:px-0"
+      class="scroll-mt-16 max-w-3xl mx-auto border-t border-b border-gray-300 dark:border-gray-600 py-16 mb-16 relative px-4 xl:px-0"
     >
-      <h3 class="font-bold">Here are some projects I've worked on:</h3>
+      <h3 class="dark:text-gray-100 font-bold">
+        Here are some projects I've worked on:
+      </h3>
 
       <div class="absolute right-0 transform rotate-180 translate-x-[120%]">
         <Image src={dotsTriangle} alt="dots" class="hidden xl:block" />
       </div>
 
-      <ul class="mt-10 space-y-6">
+      <ul class="text-indigo-600 dark:text-indigo-500 mt-10 space-y-6">
         <li class="flex items-start">
           <IconCheckmark />
           <span class="ml-4">
-            <p class="font-semibold">Project Name 1</p>
-            <p class="text-gray-600 mt-2">
+            <h4 class="text-gray-800 dark:text-gray-100 font-semibold">
+              Project Name 1
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Veritatis ad neque doloribus quod exercitationem est nulla
               reiciendis in unde eum.
@@ -70,8 +78,10 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
         <li class="flex items-start">
           <IconCheckmark />
           <span class="ml-4">
-            <p class="font-semibold">Project Name 2</p>
-            <p class="text-gray-600 mt-2">
+            <h4 class="text-gray-800 dark:text-gray-100 font-semibold">
+              Project Name 2
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Veritatis ad neque doloribus quod exercitationem est nulla
               reiciendis in unde eum.
@@ -81,8 +91,10 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
         <li class="flex items-start">
           <IconCheckmark />
           <span class="ml-4">
-            <p class="font-semibold">Project Name 3</p>
-            <p class="text-gray-600 mt-2">
+            <h4 class="text-gray-800 dark:text-gray-100 font-semibold">
+              Project Name 3
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Veritatis ad neque doloribus quod exercitationem est nulla
               reiciendis in unde eum.
@@ -92,8 +104,10 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
         <li class="flex items-start">
           <IconCheckmark />
           <span class="ml-4">
-            <p class="font-semibold">Project Name 4</p>
-            <p class="text-gray-600 mt-2">
+            <h4 class="text-gray-800 dark:text-gray-100 font-semibold">
+              Project Name 4
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Veritatis ad neque doloribus quod exercitationem est nulla
               reiciendis in unde eum.
@@ -107,7 +121,7 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
       id="about"
       class="scroll-mt-32 max-w-3xl mx-auto relative px-4 xl:px-0"
     >
-      <h3 class="font-bold">Get to know me</h3>
+      <h3 class="dark:text-gray-100 font-bold">Get to know me</h3>
 
       <div class="flex items-center flex-col sm:flex-row mt-6">
         <img
@@ -116,7 +130,7 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
           class="rounded-full w-32 h-32"
         />
         <div>
-          <p class="sm:ml-6 mt-6 sm:mt-0">
+          <p class="dark:text-gray-100 sm:ml-6 mt-6 sm:mt-0">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
             quam praesentium eligendi autem voluptate vero quo voluptatem, qui
             possimus debitis iste amet ea voluptatum aut consectetur. Velit quos
@@ -141,14 +155,14 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
           Static sites cannot submit forms on their own. However, services like
           <a
             href="https://www.netlify.com/docs/form-handling"
-            class="font-semibold text-green-700 hover:underline"
+            class="font-semibold text-indigo-700 hover:underline"
           >
             Netlify Forms
           </a>
            or
           <a
             href="http://localhost:4321/"
-            class="font-semibold text-green-700 hover:underline">FormSpree</a
+            class="font-semibold text-indigo-700 hover:underline">FormSpree</a
           > can help you do this without a backend.
         </p>
 
@@ -161,7 +175,7 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
                 name="name"
                 id="name"
                 placeholder="Your name"
-                class="block w-full rounded-md border-0 text-gray-900 shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-green-600 p-4 mt-2"
+                class="block w-full rounded-md border-0 text-gray-900 shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4 mt-2"
               />
             </div>
             <div class="col-span-2 sm:col-span-1">
@@ -171,7 +185,7 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
                 name="email"
                 id="email"
                 placeholder="Your email"
-                class="block w-full rounded-md border-0 text-gray-900 shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-green-600 p-4 mt-2"
+                class="block w-full rounded-md border-0 text-gray-900 shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4 mt-2"
               />
             </div>
 
@@ -181,7 +195,7 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
                 rows="8"
                 name="message"
                 id="message"
-                class="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-green-600 p-4 mt-2"
+                class="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4 mt-2"
                 placeholder="Enter your message here"></textarea>
             </div>
 
@@ -190,7 +204,7 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
                 <input
                   type="submit"
                   value="Submit"
-                  class="block bg-green-700 hover:bg-green-800 text-white text-sm font-semibold tracking-wide uppercase shadow rounded cursor-pointer px-6 py-3"
+                  class="block bg-indigo-700 hover:bg-indigo-900 focus:bg-indigo-900 text-white text-sm font-semibold tracking-wide uppercase shadow rounded cursor-pointer px-6 py-3"
                 />
               </div>
             </div>
@@ -212,10 +226,10 @@ import dotsRectangle from '@/images/dots-rectangle.svg'
             name="email-newsletter"
             id="email-newsletter"
             placeholder="Your email address"
-            class="z-50 block flex-1 w-full rounded-md border-0 text-gray-900 shadow sm:rounded-r-none placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-green-600 p-4"
+            class="z-50 block flex-1 w-full rounded-md border-0 text-gray-900 shadow sm:rounded-r-none placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4"
           />
           <button
-            class="z-50 flex-2 uppercase bg-green-700 text-white rounded sm:rounded-l-none fpy-3 px-8 tracking-wide shadow focus:outline-none hover:bg-green-800 focus:bg-green-800 w-full sm:w-auto mt-4 sm:mt-0 py-2"
+            class="z-50 flex-2 uppercase bg-indigo-700 text-white rounded sm:rounded-l-none fpy-3 px-8 tracking-wide shadow focus:outline-none hover:bg-indigo-900 focus:bg-indigo-900 w-full sm:w-auto mt-4 sm:mt-0 py-2"
             ><span>Subscribe</span>
           </button>
         </form>
