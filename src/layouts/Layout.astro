@@ -30,10 +30,13 @@ import NavComponent from '@/components/NavComponent.astro'
       <div
         class="container mx-auto flex flex-col sm:flex-row items-center justify-between py-8 px-0 sm:px-4"
       >
-        <div class="mb-8 sm:mb-0">
-          Copyright {new Date().getFullYear()}. All rights reserved.
+        <div class="text-sm">
+          Copyright {new Date().getFullYear()}. View source on <a
+            href="https://github.com/drehimself"
+            class="underline hover:text-gray-400">GitHub</a
+          >.
         </div>
-        <ul class="flex items-center space-x-8">
+        <ul class="flex items-center space-x-8 mt-8 sm:mt-0">
           <li>
             <a
               href="mailto:me@andremadarang.com"
