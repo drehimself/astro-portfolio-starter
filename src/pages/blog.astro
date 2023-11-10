@@ -4,18 +4,63 @@ import Layout from '@/layouts/Layout.astro'
 
 <Layout title="Astro Portfolio Starter">
   <main>
-    <section class="mx-auto max-w-3xl dark:text-gray-100 mt-40">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias id
-      recusandae dolorum aspernatur alias cupiditate qui sed quae voluptatum
-      illo error nemo tenetur commodi laboriosam enim earum suscipit
-      voluptatibus tempore sequi, molestiae velit totam aut? Blanditiis officia
-      vitae, dignissimos corrupti iure voluptate dolore molestias eius nemo
-      obcaecati deserunt recusandae commodi. Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Ut deserunt quas ducimus mollitia et
-      doloribus maiores veritatis, reiciendis expedita sed vero dolorem
-      repellendus iure, quae dolor, consequuntur qui nisi iusto esse magni
-      aperiam incidunt iste! Velit mollitia ab sunt odio ipsa esse eligendi non?
-      Voluptatem saepe animi recusandae possimus officia!
+    <section class="mx-auto max-w-3xl dark:text-gray-100 mt-40 px-4 xl:px-0">
+      <div class="posts divide-y divide:gray-400 dark:divide-gray-700">
+        <div class="post py-8">
+          <h2 class="text-3xl font-bold">
+            <a href="/post" class="hover:text-gray-500 dark:hover:text-gray-300"
+              >Introduction to Astro</a
+            >
+          </h2>
+          <div class="text-base flex gap-2 mt-1">
+            <span>Nov 8, 2023</span>
+            <span>&middot;</span>
+            <span>1 min read</span>
+          </div>
+          <div class="line-clamp-3 text-gray-600 dark:text-gray-300 mt-4">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam iste,
+            odio beatae cumque nisi error aspernatur dolores illum ratione velit
+            ipsum atque consectetur corporis voluptas. Repellat ipsum distinctio
+            nobis, praesentium esse accusamus tempore rerum et perferendis porro
+            illo eligendi ab.
+          </div>
+          <div class="mt-4">
+            <a
+              href="/post"
+              class="font-bold uppercase hover:text-gray-500 dark:hover:text-gray-300"
+            >
+              Read More
+            </a>
+          </div>
+        </div>
+        <div class="post py-8">
+          <h2 class="text-3xl font-bold">
+            <a href="/post" class="hover:text-gray-500 dark:hover:text-gray-300"
+              >Introduction to Astro</a
+            >
+          </h2>
+          <div class="text-base flex gap-2 mt-1">
+            <span>Nov 8, 2023</span>
+            <span>&middot;</span>
+            <span>1 min read</span>
+          </div>
+          <div class="line-clamp-3 text-gray-600 dark:text-gray-300 mt-4">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam iste,
+            odio beatae cumque nisi error aspernatur dolores illum ratione velit
+            ipsum atque consectetur corporis voluptas. Repellat ipsum distinctio
+            nobis, praesentium esse accusamus tempore rerum et perferendis porro
+            illo eligendi ab.
+          </div>
+          <div class="mt-4">
+            <a
+              href="/post"
+              class="font-bold uppercase hover:text-gray-500 dark:hover:text-gray-300"
+            >
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </Layout>
