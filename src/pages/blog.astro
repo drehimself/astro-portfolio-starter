@@ -2,7 +2,10 @@
 import Layout from '@/layouts/Layout.astro'
 import { getCollection } from 'astro:content'
 
-const posts = await getCollection('posts')
+const allPosts = await getCollection('posts')
+const posts = allPosts.sort(
+  (a, b) => new Date(b.data.date) - new Date(a.data.date),
+)
 ---
 
 <Layout title="Astro Portfolio Starter">
