@@ -19,14 +19,33 @@ const { Content } = await post.render()
     <div class="post py-8">
       <h2 class="text-3xl font-bold">{post.data.title}</h2>
       <div class="text-base flex gap-2 mt-1">
-        <span>{post.data.date}</span>
+        <time datetime={post.data.date.toISOString()}>
+          {
+            post.data.date.toLocaleDateString('en-CA', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric',
+            })
+          }
+        </time>
+        <!-- <span
+          >{
+            post.data.date.toLocaleDateString('en-CA', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric',
+            })
+          }</span
+        > -->
         <!-- <span>&middot;</span> -->
         <!-- <span>1 min read</span> -->
       </div>
-      <div class="prose max-w-none text-gray-600 dark:text-gray-300 mt-4">
+      <div
+        class="prose dark:prose-invert prose-lg max-w-none text-gray-600 dark:text-gray-300 mt-8"
+      >
         <Content />
       </div>
-      <div class="mt-4">
+      <div class="pt-8 mt-8 border-t border-gray-300 dark:border-gray-700">
         <a
           href="/blog"
           class="font-bold uppercase hover:text-gray-500 dark:hover:text-gray-300"

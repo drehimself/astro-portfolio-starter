@@ -21,7 +21,13 @@ const posts = await getCollection('posts')
                 </a>
               </h2>
               <div class="text-base flex gap-2 mt-1">
-                <span>Nov 8, 2023</span>
+                <time datetime={post.data.date.toISOString()}>
+                  {post.data.date.toLocaleDateString('en-CA', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric',
+                  })}
+                </time>
                 <span>&middot;</span>
                 <span>1 min read</span>
               </div>
@@ -43,33 +49,6 @@ const posts = await getCollection('posts')
             </div>
           ))
         }
-        <!-- <div class="post py-8">
-          <h2 class="text-3xl font-bold">
-            <a href="/post" class="hover:text-gray-500 dark:hover:text-gray-300"
-              >Introduction to Astro</a
-            >
-          </h2>
-          <div class="text-base flex gap-2 mt-1">
-            <span>Nov 8, 2023</span>
-            <span>&middot;</span>
-            <span>1 min read</span>
-          </div>
-          <div class="line-clamp-3 text-gray-600 dark:text-gray-300 mt-4">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam iste,
-            odio beatae cumque nisi error aspernatur dolores illum ratione velit
-            ipsum atque consectetur corporis voluptas. Repellat ipsum distinctio
-            nobis, praesentium esse accusamus tempore rerum et perferendis porro
-            illo eligendi ab.
-          </div>
-          <div class="mt-4">
-            <a
-              href="/post"
-              class="font-bold uppercase hover:text-gray-500 dark:hover:text-gray-300"
-            >
-              Read More
-            </a>
-          </div>
-        </div> -->
       </div>
     </section>
   </main>
