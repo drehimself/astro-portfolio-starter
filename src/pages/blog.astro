@@ -22,14 +22,13 @@ const posts = await getCollection('posts')
               </h2>
               <div class="text-base flex gap-2 mt-1">
                 <time datetime={post.data.date.toISOString()}>
-                  {post.data.date.toLocaleDateString('en-CA', {
+                  {new Date(post.data.date).toLocaleDateString('en-CA', {
                     month: 'long',
                     day: 'numeric',
                     year: 'numeric',
+                    timeZone: 'utc',
                   })}
                 </time>
-                <span>&middot;</span>
-                <span>1 min read</span>
               </div>
               <div class="line-clamp-3 text-gray-600 dark:text-gray-300 mt-4">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam

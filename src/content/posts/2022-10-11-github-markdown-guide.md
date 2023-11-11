@@ -1,12 +1,13 @@
 ---
-title: 'Markdown Guide'
-date: 2019-10-11
+title: 'GitHub Markdown Guide'
+slug: 'github-markdown-guide'
+date: 2022-10-11
 tags: ['features', 'markdown']
 draft: false
 summary: 'Markdown cheatsheet for all your blogging needs - headers, lists, images, tables and more! An illustrated guide based on GitHub Flavored Markdown.'
 ---
 
-# Introduction
+## Introduction
 
 Markdown and Mdx parsing is supported via `unified`, and other remark and rehype packages. `next-mdx-remote` allows us to parse `.mdx` and `.md` files in a more flexible manner without touching webpack.
 
@@ -14,7 +15,7 @@ GitHub flavored markdown is used. `mdx-prism` provides syntax highlighting capab
 
 The following markdown cheatsheet is adapted from: https://guides.github.com/features/mastering-markdown/
 
-# What is Markdown?
+## What is Markdown?
 
 Markdown is a way to style text on the web. You control the display of the document; formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdown. Mostly, Markdown is just regular text with a few non-alphabetic characters thrown in, like `#` or `*`.
 
