@@ -1,0 +1,14 @@
+---
+const { date } = Astro.props
+---
+
+<time datetime={date.toISOString()}>
+  {
+    new Date(date).toLocaleDateString('en-CA', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+      timeZone: 'utc',
+    })
+  }
+</time>

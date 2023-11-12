@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content'
 import Layout from '@/layouts/Layout.astro'
 import NewsletterSection from '@/components/NewsletterSection.astro'
+import DatePresenter from '@/components/DatePresenter.astro'
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts')
@@ -22,16 +23,7 @@ const { Content } = await post.render()
     <div class="post py-8">
       <h2 class="text-4xl font-bold">{post.data.title}</h2>
       <div class="text-base flex gap-2 mt-1.5">
-        <time datetime={post.data.date.toISOString()}>
-          {
-            post.data.date.toLocaleDateString('en-CA', {
-              month: 'long',
-              day: 'numeric',
-              year: 'numeric',
-              timeZone: 'utc',
-            })
-          }
-        </time>
+        <DatePresenter date={post.data.date} />
       </div>
       <div
         class="prose dark:prose-invert prose-lg max-w-none text-gray-600 dark:text-gray-300 mt-8"
