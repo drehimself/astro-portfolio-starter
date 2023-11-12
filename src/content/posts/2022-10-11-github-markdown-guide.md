@@ -2,8 +2,6 @@
 title: 'GitHub Markdown Guide'
 slug: 'github-markdown-guide'
 date: 2022-10-11
-tags: ['features', 'markdown']
-draft: false
 summary: 'Markdown cheatsheet for all your blogging needs - headers, lists, images, tables and more! An illustrated guide based on GitHub Flavored Markdown.'
 ---
 

@@ -2,12 +2,7 @@
 title: 'My Second Blog Post'
 slug: 'my-second-blog-post'
 date: 2022-09-20
-description: 'This is the first post of my new Astro blog.'
-author: 'Astro Learner'
-image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
-    alt: 'The full Astro logo.'
-tags: ["astro", "blogging", "learning in public"]
+summary: 'This is the second post of my new Astro blog.'
 ---
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website. Proin scelerisque sociosqu curae massa porta aptent taciti ligula tellus per praesent nam tristique ad et fermentum magnis nisi ex faucibus integer malesuada montes lectus dis purus auctor rutrum morbi neque netus amet mi vel volutpat nunc semper natoque vitae.
 
@@ -17,7 +12,7 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 
 2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
 
-3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
+3. **Making Blog Posts**: This is my second blog post! I now have Astro pages and Markdown posts!
 
 ## What's next
 
