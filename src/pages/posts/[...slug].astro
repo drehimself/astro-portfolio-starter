@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import Layout from '@/layouts/Layout.astro'
+import NewsletterSection from '@/components/NewsletterSection.astro'
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts')
@@ -15,7 +16,9 @@ const { Content } = await post.render()
 ---
 
 <Layout title={post.data.title}>
-  <section class="mx-auto max-w-3xl dark:text-gray-100 mt-40 px-4 xl:px-0">
+  <section
+    class="mx-auto max-w-3xl dark:text-gray-100 mt-40 px-4 xl:px-0 mb-20"
+  >
     <div class="post py-8">
       <h2 class="text-4xl font-bold">{post.data.title}</h2>
       <div class="text-base flex gap-2 mt-1.5">
@@ -45,4 +48,6 @@ const { Content } = await post.render()
       </div>
     </div>
   </section>
+
+  <NewsletterSection alternateDark={true} />
 </Layout>

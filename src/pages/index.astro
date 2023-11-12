@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro'
 import IconCheckmark from '@/components/IconCheckmark.astro'
 import { Image } from 'astro:assets'
+import NewsletterSection from '@/components/NewsletterSection.astro'
 import developerImage from '@/images/developer.svg'
 import mindMapImage from '@/images/mind-map.svg'
 import codeReviewImage from '@/images/code-review.svg'
@@ -220,7 +221,9 @@ import avatarImage from '@/images/avatar.png'
       </div>
     </section>
 
-    <section
+    <NewsletterSection />
+
+    <!-- <section
       class="newsletter bg-gray-200 dark:bg-slate-900 text-center pt-12 px-4 xl:px-0"
     >
       <div class="max-w-xl mx-auto">
@@ -247,6 +250,6 @@ import avatarImage from '@/images/avatar.png'
       <div class="max-w-3xl mx-auto -mt-12">
         <Image src={dotsRectangle} alt="dots" />
       </div>
-    </section>
+    </section> -->
   </main>
 </Layout>
