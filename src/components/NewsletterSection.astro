@@ -2,13 +2,13 @@
 import { Image } from 'astro:assets'
 import dotsRectangle from '@/images/dots-rectangle.svg'
 
-const { alternateDark = false } = Astro.props
+const currentPath = Astro.url.pathname
 ---
 
 <section
   class:list={[
-    'newsletter bg-gray-200 text-center pt-12 px-4 xl:px-0',
-    [alternateDark ? 'dark:bg-slate-800' : 'dark:bg-slate-900'],
+    'newsletter mt-auto bg-gray-200 text-center pt-12 px-4 xl:px-0',
+    [currentPath === '/' ? 'dark:bg-slate-900' : 'dark:bg-slate-800'],
   ]}
 >
   <div class="max-w-xl mx-auto">

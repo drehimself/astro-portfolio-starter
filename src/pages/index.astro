@@ -2,12 +2,10 @@
 import Layout from '@/layouts/Layout.astro'
 import IconCheckmark from '@/components/IconCheckmark.astro'
 import { Image } from 'astro:assets'
-import NewsletterSection from '@/components/NewsletterSection.astro'
 import developerImage from '@/images/developer.svg'
 import mindMapImage from '@/images/mind-map.svg'
 import codeReviewImage from '@/images/code-review.svg'
 import dotsTriangle from '@/images/dots-triangle.svg'
-import dotsRectangle from '@/images/dots-rectangle.svg'
 import avatarImage from '@/images/avatar.png'
 ---
 
@@ -220,36 +218,5 @@ import avatarImage from '@/images/avatar.png'
         </div>
       </div>
     </section>
-
-    <NewsletterSection />
-
-    <!-- <section
-      class="newsletter bg-gray-200 dark:bg-slate-900 text-center pt-12 px-4 xl:px-0"
-    >
-      <div class="max-w-xl mx-auto">
-        <h3 class="text-xl font-bold dark:text-gray-100">Join my newsletter</h3>
-        <p class="dark:text-gray-200 mt-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-          officia nisi eos porro, repellendus commodi debitis.
-        </p>
-        <form action="#" class="flex flex-col sm:flex-row mt-8">
-          <input
-            type="text"
-            name="email-newsletter"
-            id="email-newsletter"
-            placeholder="Your email address"
-            class="z-50 block dark:bg-slate-700 dark:text-gray-100 flex-1 w-full rounded-md border-0 text-gray-900 shadow sm:rounded-r-none placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-indigo-600 p-4"
-          />
-          <button
-            class="z-50 flex-2 uppercase bg-indigo-700 text-white rounded sm:rounded-l-none fpy-3 px-8 tracking-wide shadow focus:outline-none hover:bg-indigo-900 focus:bg-indigo-900 w-full sm:w-auto mt-4 sm:mt-0 py-2"
-            ><span>Subscribe</span>
-          </button>
-        </form>
-      </div>
-
-      <div class="max-w-3xl mx-auto -mt-12">
-        <Image src={dotsRectangle} alt="dots" />
-      </div>
-    </section> -->
   </main>
 </Layout>

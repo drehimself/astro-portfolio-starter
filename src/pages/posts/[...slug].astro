@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content'
 import Layout from '@/layouts/Layout.astro'
-import NewsletterSection from '@/components/NewsletterSection.astro'
 import DatePresenter from '@/components/DatePresenter.astro'
 
 export async function getStaticPaths() {
@@ -40,6 +39,4 @@ const { Content } = await post.render()
       </div>
     </div>
   </section>
-
-  <NewsletterSection alternateDark={true} />
 </Layout>

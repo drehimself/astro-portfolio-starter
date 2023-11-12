@@ -1,18 +1,32 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import { getCollection } from 'astro:content'
-import NewsletterSection from '@/components/NewsletterSection.astro'
 import DatePresenter from '@/components/DatePresenter.astro'
+import { type CollectionEntry } from 'astro:content'
+import type { GetStaticPathsOptions, Page } from 'astro'
 
-const allPosts = await getCollection('posts')
-const posts = allPosts.sort(
-  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
-)
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const posts = (await getCollection('posts')).sort(sortPostsByDateDesc)
+
+  function sortPostsByDateDesc(
+    postA: CollectionEntry<'posts'>,
+    postB: CollectionEntry<'posts'>,
+  ) {
+    return (
+      new Date(postB.data.date).getTime() - new Date(postA.data.date).getTime()
+    )
+  }
+
+  return paginate(posts, { pageSize: 2 })
+}
+
+const { page } = Astro.props as { page: Page<CollectionEntry<'posts'>> }
+const posts = page.data
 ---
 
 <Layout title="Astro Portfolio Starter">
   <section
-    class="mx-auto max-w-3xl dark:text-gray-100 mt-40 px-4 xl:px-0 mb-20"
+    class="mx-auto max-w-3xl w-full dark:text-gray-100 mt-40 px-4 xl:px-0 mb-20"
   >
     <div class="posts divide-y divide:gray-400 dark:divide-gray-700">
       {
@@ -45,6 +59,4 @@ const posts = allPosts.sort(
       }
     </div>
   </section>
-
-  <NewsletterSection alternateDark={true} />
 </Layout>
