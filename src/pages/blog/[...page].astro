@@ -17,7 +17,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     )
   }
 
-  return paginate(posts, { pageSize: 2 })
+  return paginate(posts, { pageSize: 1 })
 }
 
 const { page } = Astro.props as { page: Page<CollectionEntry<'posts'>> }
@@ -56,6 +56,39 @@ const posts = page.data
             </div>
           </div>
         ))
+      }
+    </div>
+    <div
+      class="pagination flex justify-between text-base items-center border-t border-gray-200 dark:border-gray-700 pt-8"
+    >
+      {
+        page.url.prev ? (
+          <a
+            href={page.url.prev}
+            class="hover:text-gray-500 dark:hover:text-gray-300"
+          >
+            &larr; Prev
+          </a>
+        ) : (
+          <a href="#" class="invisible">
+            &larr; Prev
+          </a>
+        )
+      }
+      <div>Page {page.currentPage} of {page.lastPage}</div>
+      {
+        page.url.next ? (
+          <a
+            href={page.url.next}
+            class="hover:text-gray-500 dark:hover:text-gray-300"
+          >
+            Next &rarr;
+          </a>
+        ) : (
+          <a href="#" class="invisible">
+            Next &rarr;
+          </a>
+        )
       }
     </div>
   </section>
