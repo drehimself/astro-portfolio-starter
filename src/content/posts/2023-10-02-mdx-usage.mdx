@@ -1,0 +1,62 @@
+---
+title: 'MDX usage in Astro'
+slug: 'mdx-usage-in-astro'
+date: 2023-10-02
+summary: 'MDX allows you to use variables, JSX expressions and components within Markdown content in Astro. If you have existing content authored in MDX, this integration allows you to bring those files to your Astro project.'
+---
+import AstroComponent from '@/components/AstroComponent.astro'
+import ReactComponent from '@/components/ReactComponent.jsx'
+import VueComponent from '@/components/VueComponent.vue'
+
+
+## Why MDX?
+
+MDX allows you to use variables, JSX expressions and components within Markdown content in Astro. If you have existing content authored in MDX, this integration allows you to bring those files to your Astro project.
+
+## Astro Component
+
+<AstroComponent />
+
+## React Component
+
+<ReactComponent client:load />
+
+## Vue Component
+
+<VueComponent client:load />
+
+## Quick Install
+
+The astro add command-line tool automates the installation for you. Run one of the following commands in a new terminal window. (If you aren’t sure which package manager you’re using, run the first command.) Then, follow the prompts, and type “y” in the terminal (meaning “yes”) for each one.
+
+```bash
+# Using NPM
+npx astro add mdx
+# Using Yarn
+yarn astro add mdx
+# Using PNPM
+pnpm astro add mdx
+```
+
+## Manual Install
+
+First, install the @astrojs/mdx package using your package manager. If you’re using npm or aren’t sure, run this in the terminal:
+
+```bash
+npm install @astrojs/mdx
+```
+
+
+Then, apply this integration to your `astro.config.*` file using the `integrations` property:
+
+```javascript
+//astro.config.js
+import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
+
+export default defineConfig({
+  // ...
+  integrations: [mdx()],
+  //             ^^^^^
+});
+```
