@@ -32,7 +32,7 @@ const posts = page.data
       {
         posts.map(post => (
           <div class="post py-8">
-            <h2 class="text-3xl font-bold">
+            <h2 class="text-3xl font-bold" transition:name={post.data.title}>
               <a
                 href={`/posts/${post.slug}`}
                 class="hover:text-gray-500 dark:hover:text-gray-300"
@@ -40,8 +40,12 @@ const posts = page.data
                 {post.data.title}
               </a>
             </h2>
+
             <div class="text-base flex gap-2 mt-1">
-              <DatePresenter date={post.data.date} />
+              <DatePresenter
+                date={post.data.date}
+                transitionName={post.data.date.toString()}
+              />
             </div>
             <div class="line-clamp-3 text-gray-600 dark:text-gray-300 mt-4">
               {post.data.summary}

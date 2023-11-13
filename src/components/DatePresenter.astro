@@ -1,8 +1,8 @@
 ---
-const { date } = Astro.props
+const { date, transitionName = null } = Astro.props
 ---
 
-<time datetime={date.toISOString()}>
+<time datetime={date.toISOString()} transition:name={transitionName}>
   {
     new Date(date).toLocaleDateString('en-CA', {
       month: 'long',

@@ -120,72 +120,7 @@ import logoForDark from '@/images/astro-logo-for-dark-mode.svg'
   </nav>
 </header>
 
-<script is:inline>
-  const moonIcon = document.querySelector('#moonIcon')
-  const sunIcon = document.querySelector('#sunIcon')
-  const logoForLight = document.querySelector('#logoForLight')
-  const logoForDark = document.querySelector('#logoForDark')
-
-  const themeToggle = document.querySelector('#themeToggle')
-  const mobileNav = document.querySelector('#mobileNav')
-  const hamburgerMenu = document.querySelector('#hamburgerMenu')
-
-  const theme = getTheme()
-  setInitialTheme(theme)
-
-  themeToggle.addEventListener('click', handleToggleTheme)
-
-  hamburgerMenu.addEventListener('click', handleToggleMobileNav)
-
-  document.addEventListener('keydown', handleEscapeKeyPress)
-
-  mobileNav.addEventListener('click', handleMobileNavClick)
-
-  document.addEventListener('click', handleClickOutside)
-
-  function handleClickOutside(event) {
-    const isClickInside = mobileNav.contains(event.target)
-
-    if (!isClickInside) {
-      if (!hamburgerMenu.contains(event.target)) {
-        mobileNav.classList.add('hidden')
-      }
-    }
-  }
-
-  function handleMobileNavClick(event) {
-    if (
-      event.target.tagName === 'A' ||
-      event.target.classList.contains('menuItem')
-    ) {
-      mobileNav.classList.add('hidden')
-    }
-  }
-
-  function handleEscapeKeyPress(event) {
-    if (event.key === 'Escape') {
-      mobileNav.classList.add('hidden')
-    }
-  }
-
-  function handleToggleMobileNav() {
-    mobileNav.classList.toggle('hidden')
-  }
-
-  function setInitialTheme(theme) {
-    if (theme === 'light') {
-      document.documentElement.classList.remove('dark')
-      logoForLight.classList.remove('hidden')
-      moonIcon.classList.remove('hidden')
-    } else {
-      document.documentElement.classList.add('dark')
-      logoForDark.classList.remove('hidden')
-      sunIcon.classList.remove('hidden')
-    }
-
-    window.localStorage.setItem('theme', theme)
-  }
-
+<script>
   function getTheme() {
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
       return localStorage.getItem('theme')
@@ -196,27 +131,121 @@ import logoForDark from '@/images/astro-logo-for-dark-mode.svg'
     return 'light'
   }
 
-  function handleToggleTheme(e) {
-    e.preventDefault()
+  document.addEventListener('astro:page-load', () => {
+    const moonIcon = document.querySelector('#moonIcon')
+    const sunIcon = document.querySelector('#sunIcon')
+    const logoForLight = document.querySelector('#logoForLight')
+    const logoForDark = document.querySelector('#logoForDark')
 
-    document.documentElement.classList.toggle('dark')
+    const themeToggle = document.querySelector('#themeToggle')
+    const mobileNav = document.querySelector('#mobileNav')
+    const hamburgerMenu = document.querySelector('#hamburgerMenu')
 
-    const isDark = document.documentElement.classList.contains('dark')
+    const theme = getTheme()
+    setInitialTheme(theme)
 
-    localStorage.setItem('theme', isDark ? 'dark' : 'light')
+    themeToggle.addEventListener('click', handleToggleTheme)
 
-    if (isDark) {
-      logoForDark.classList.remove('hidden')
-      logoForLight.classList.add('hidden')
-      moonIcon.classList.add('hidden')
-      sunIcon.classList.remove('hidden')
-    } else {
-      logoForDark.classList.add('hidden')
-      logoForLight.classList.remove('hidden')
-      moonIcon.classList.remove('hidden')
-      sunIcon.classList.add('hidden')
+    hamburgerMenu.addEventListener('click', handleToggleMobileNav)
+
+    document.addEventListener('keydown', handleEscapeKeyPress)
+
+    mobileNav.addEventListener('click', handleMobileNavClick)
+
+    document.addEventListener('click', handleClickOutside)
+
+    function handleClickOutside(event) {
+      const isClickInside = mobileNav.contains(event.target)
+
+      if (!isClickInside) {
+        if (!hamburgerMenu.contains(event.target)) {
+          mobileNav.classList.add('hidden')
+        }
+      }
     }
 
-    mobileNav.classList.add('hidden')
-  }
+    function handleMobileNavClick(event) {
+      if (
+        event.target.tagName === 'A' ||
+        event.target.classList.contains('menuItem')
+      ) {
+        mobileNav.classList.add('hidden')
+      }
+    }
+
+    function handleEscapeKeyPress(event) {
+      if (event.key === 'Escape') {
+        mobileNav.classList.add('hidden')
+      }
+    }
+
+    function handleToggleMobileNav() {
+      mobileNav.classList.toggle('hidden')
+    }
+
+    function setInitialTheme(theme) {
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark')
+        logoForLight.classList.remove('hidden')
+        moonIcon.classList.remove('hidden')
+      } else {
+        document.documentElement.classList.add('dark')
+        logoForDark.classList.remove('hidden')
+        sunIcon.classList.remove('hidden')
+      }
+
+      window.localStorage.setItem('theme', theme)
+    }
+
+    function handleToggleTheme(e) {
+      e.preventDefault()
+
+      document.documentElement.classList.toggle('dark')
+
+      const isDark = document.documentElement.classList.contains('dark')
+
+      localStorage.setItem('theme', isDark ? 'dark' : 'light')
+
+      if (isDark) {
+        logoForDark.classList.remove('hidden')
+        logoForLight.classList.add('hidden')
+        moonIcon.classList.add('hidden')
+        sunIcon.classList.remove('hidden')
+      } else {
+        logoForDark.classList.add('hidden')
+        logoForLight.classList.remove('hidden')
+        moonIcon.classList.remove('hidden')
+        sunIcon.classList.add('hidden')
+      }
+
+      mobileNav.classList.add('hidden')
+    }
+  })
+
+  // For view transitions to work without FOUC
+  document.addEventListener('astro:after-swap', () => {
+    const moonIcon = document.querySelector('#moonIcon')
+    const sunIcon = document.querySelector('#sunIcon')
+    const logoForLight = document.querySelector('#logoForLight')
+    const logoForDark = document.querySelector('#logoForDark')
+
+    const theme = getTheme()
+    setInitialTheme(theme)
+
+    function setInitialTheme(theme) {
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark')
+        logoForLight.classList.remove('hidden')
+        moonIcon.classList.remove('hidden')
+      } else {
+        document.documentElement.classList.add('dark')
+        logoForDark.classList.remove('hidden')
+        sunIcon.classList.remove('hidden')
+      }
+
+      window.localStorage.setItem('theme', theme)
+    }
+  })
 </script>
+
+<script></script>
