@@ -7,6 +7,8 @@ summary: 'MDX allows you to use variables, JSX expressions and components within
 import AstroComponent from '@/components/AstroComponent.astro'
 import ReactComponent from '@/components/ReactComponent.jsx'
 import VueComponent from '@/components/VueComponent.vue'
+import { Image } from 'astro:assets'
+import mountainImage from '@/images/mountain.jpg'
 
 
 ## Why MDX?
@@ -24,6 +26,10 @@ MDX allows you to use variables, JSX expressions and components within Markdown 
 ## Vue Component
 
 <VueComponent client:load />
+
+## Astro Image Component
+
+<Image src={mountainImage} alt="Mountain" />
 
 ## Quick Install
 
