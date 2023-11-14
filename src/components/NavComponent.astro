@@ -123,7 +123,7 @@ import logoForDark from '@/images/astro-logo-for-dark-mode.svg'
 <script>
   function getTheme() {
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-      return localStorage.getItem('theme')
+      return localStorage.getItem('theme') || ''
     }
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark'
@@ -132,14 +132,14 @@ import logoForDark from '@/images/astro-logo-for-dark-mode.svg'
   }
 
   document.addEventListener('astro:page-load', () => {
-    const moonIcon = document.querySelector('#moonIcon')
-    const sunIcon = document.querySelector('#sunIcon')
-    const logoForLight = document.querySelector('#logoForLight')
-    const logoForDark = document.querySelector('#logoForDark')
+    const moonIcon = document.querySelector('#moonIcon') as Element
+    const sunIcon = document.querySelector('#sunIcon') as Element
+    const logoForLight = document.querySelector('#logoForLight') as Element
+    const logoForDark = document.querySelector('#logoForDark') as Element
 
-    const themeToggle = document.querySelector('#themeToggle')
-    const mobileNav = document.querySelector('#mobileNav')
-    const hamburgerMenu = document.querySelector('#hamburgerMenu')
+    const themeToggle = document.querySelector('#themeToggle') as Element
+    const mobileNav = document.querySelector('#mobileNav') as Element
+    const hamburgerMenu = document.querySelector('#hamburgerMenu') as Element
 
     const theme = getTheme()
     setInitialTheme(theme)
@@ -150,30 +150,31 @@ import logoForDark from '@/images/astro-logo-for-dark-mode.svg'
 
     document.addEventListener('keydown', handleEscapeKeyPress)
 
-    mobileNav.addEventListener('click', handleMobileNavClick)
+    mobileNav.addEventListener('click', handleMobileNavClick as EventListener)
 
     document.addEventListener('click', handleClickOutside)
 
-    function handleClickOutside(event) {
-      const isClickInside = mobileNav.contains(event.target)
+    function handleClickOutside(event: MouseEvent) {
+      const isClickInside = mobileNav.contains(event.target as Node)
 
       if (!isClickInside) {
-        if (!hamburgerMenu.contains(event.target)) {
+        if (!hamburgerMenu.contains(event.target as Node)) {
           mobileNav.classList.add('hidden')
         }
       }
     }
 
-    function handleMobileNavClick(event) {
-      if (
-        event.target.tagName === 'A' ||
-        event.target.classList.contains('menuItem')
-      ) {
-        mobileNav.classList.add('hidden')
+    function handleMobileNavClick(event: MouseEvent) {
+      const { target } = event
+
+      if (target instanceof HTMLElement) {
+        if (target.tagName === 'A' || target.classList.contains('menuItem')) {
+          mobileNav.classList.add('hidden')
+        }
       }
     }
 
-    function handleEscapeKeyPress(event) {
+    function handleEscapeKeyPress(event: KeyboardEvent) {
       if (event.key === 'Escape') {
         mobileNav.classList.add('hidden')
       }
@@ -183,7 +184,7 @@ import logoForDark from '@/images/astro-logo-for-dark-mode.svg'
       mobileNav.classList.toggle('hidden')
     }
 
-    function setInitialTheme(theme) {
+    function setInitialTheme(theme: string) {
       if (theme === 'light') {
         document.documentElement.classList.remove('dark')
         logoForLight.classList.remove('hidden')
@@ -197,8 +198,8 @@ import logoForDark from '@/images/astro-logo-for-dark-mode.svg'
       window.localStorage.setItem('theme', theme)
     }
 
-    function handleToggleTheme(e) {
-      e.preventDefault()
+    function handleToggleTheme(event: Event) {
+      event.preventDefault()
 
       document.documentElement.classList.toggle('dark')
 
@@ -224,15 +225,15 @@ import logoForDark from '@/images/astro-logo-for-dark-mode.svg'
 
   // For view transitions to work without FOUC
   document.addEventListener('astro:after-swap', () => {
-    const moonIcon = document.querySelector('#moonIcon')
-    const sunIcon = document.querySelector('#sunIcon')
-    const logoForLight = document.querySelector('#logoForLight')
-    const logoForDark = document.querySelector('#logoForDark')
+    const moonIcon = document.querySelector('#moonIcon') as Element
+    const sunIcon = document.querySelector('#sunIcon') as Element
+    const logoForLight = document.querySelector('#logoForLight') as Element
+    const logoForDark = document.querySelector('#logoForDark') as Element
 
     const theme = getTheme()
     setInitialTheme(theme)
 
-    function setInitialTheme(theme) {
+    function setInitialTheme(theme: string) {
       if (theme === 'light') {
         document.documentElement.classList.remove('dark')
         logoForLight.classList.remove('hidden')
@@ -247,5 +248,3 @@ import logoForDark from '@/images/astro-logo-for-dark-mode.svg'
     }
   })
 </script>
-
-<script></script>
