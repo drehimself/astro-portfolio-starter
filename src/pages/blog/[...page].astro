@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content'
 import DatePresenter from '@/components/DatePresenter.astro'
 import { type CollectionEntry } from 'astro:content'
 import type { GetStaticPathsOptions, Page } from 'astro'
+import TagsPresenter from '@/components/TagsPresenter.astro'
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const posts = (await getCollection('posts')).sort(sortPostsByDateDesc)
@@ -32,7 +33,16 @@ const posts = page.data
       {
         posts.map(post => (
           <div class="post py-8">
-            <h2 class="text-3xl font-bold" transition:name={post.data.title}>
+            <div class="text-base flex gap-2">
+              <DatePresenter
+                date={post.data.date}
+                transitionName={post.data.date.toString()}
+              />
+            </div>
+            <h2
+              class="text-3xl font-bold mt-1"
+              transition:name={post.data.title}
+            >
               <a
                 href={`/posts/${post.slug}`}
                 class="hover:text-gray-500 dark:hover:text-gray-300"
@@ -41,12 +51,8 @@ const posts = page.data
               </a>
             </h2>
 
-            <div class="text-base flex gap-2 mt-1">
-              <DatePresenter
-                date={post.data.date}
-                transitionName={post.data.date.toString()}
-              />
-            </div>
+            <TagsPresenter tags={post.data.tags} />
+
             <div class="line-clamp-3 text-gray-600 dark:text-gray-300 mt-4">
               {post.data.summary}
             </div>

@@ -1,0 +1,17 @@
+---
+const tags: Array<string> = Astro.props.tags
+---
+
+<ul
+  class="flex items-center text-indigo-600 dark:text-indigo-300 flex-wrap text-base gap-4 mt-1"
+>
+  {
+    tags.map(tag => (
+      <li>
+        <a href="" class="hover:text-indigo-400 dark:hover:text-indigo-200">
+          {tag}
+        </a>
+      </li>
+    ))
+  }
+</ul>

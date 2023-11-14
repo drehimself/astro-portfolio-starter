@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content'
 import Layout from '@/layouts/Layout.astro'
 import DatePresenter from '@/components/DatePresenter.astro'
+import TagsPresenter from '@/components/TagsPresenter.astro'
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts')
@@ -20,15 +21,33 @@ const { Content } = await post.render()
     class="mx-auto max-w-3xl dark:text-gray-100 mt-40 px-4 xl:px-0 mb-20"
   >
     <div class="post py-8">
-      <h2 class="text-4xl font-bold" transition:name={post.data.title}>
-        {post.data.title}
-      </h2>
-      <div class="text-base flex gap-2 mt-1.5">
+      <div class="text-base flex gap-2">
         <DatePresenter
           date={post.data.date}
           transitionName={post.data.date.toString()}
         />
       </div>
+      <h2 class="text-4xl font-bold mt-1" transition:name={post.data.title}>
+        {post.data.title}
+      </h2>
+      <TagsPresenter tags={post.data.tags} />
+      <!-- <ul
+        class="flex items-center text-indigo-600 dark:text-indigo-300 flex-wrap text-base gap-4 mt-1"
+      >
+        {
+          post.data.tags.map(tag => (
+            <li>
+              <a
+                href=""
+                class="hover:text-indigo-400 dark:hover:text-indigo-200"
+              >
+                {tag}
+              </a>
+            </li>
+          ))
+        }
+      </ul> -->
+
       <div
         class="prose dark:prose-invert prose-lg max-w-none text-gray-600 dark:text-gray-300 mt-8"
       >
