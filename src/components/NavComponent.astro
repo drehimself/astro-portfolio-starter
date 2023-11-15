@@ -4,12 +4,14 @@ import logoForLight from '@/images/astro-logo-for-light-mode.svg'
 import logoForDark from '@/images/astro-logo-for-dark-mode.svg'
 
 const navigation = [
-  { href: '/#projects', title: 'Projects' },
-  { href: '/#about', title: 'About' },
-  { href: '/#contact', title: 'Contact' },
-  { href: '/tags', title: 'Tags' },
-  { href: '/blog', title: 'Blog' },
+  { href: '/#projects', title: 'Projects', newTab: false },
+  { href: '/#about', title: 'About', newTab: false },
+  { href: '/#contact', title: 'Contact', newTab: false },
+  { href: '/tags', title: 'Tags', newTab: false },
+  { href: '/blog', title: 'Blog', newTab: false },
 ]
+
+const pathname = Astro.url.pathname.split('/')[1]
 ---
 
 <header
@@ -104,7 +106,14 @@ const navigation = [
             {!nav.newTab && (
               <a
                 href={nav.href}
-                class="hover:text-gray-500 menuItem dark:hover:text-gray-300"
+                class:list={[
+                  'hover:text-gray-500 menuItem dark:hover:text-gray-300',
+                  {
+                    'underline underline-offset-4 decoration-wavy':
+                      (pathname && nav.href.includes(pathname)) ||
+                      (pathname === 'posts' && nav.href === '/blog'),
+                  },
+                ]}
               >
                 {nav.title}
               </a>
