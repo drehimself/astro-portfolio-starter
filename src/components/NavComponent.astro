@@ -2,6 +2,14 @@
 import { Image } from 'astro:assets'
 import logoForLight from '@/images/astro-logo-for-light-mode.svg'
 import logoForDark from '@/images/astro-logo-for-dark-mode.svg'
+
+const navigation = [
+  { href: '/#projects', title: 'Projects' },
+  { href: '/#about', title: 'About' },
+  { href: '/#contact', title: 'Contact' },
+  { href: '/tags', title: 'Tags' },
+  { href: '/blog', title: 'Blog' },
+]
 ---
 
 <header
@@ -90,38 +98,31 @@ import logoForDark from '@/images/astro-logo-for-dark-mode.svg'
           </svg>
         </a>
       </li>
-      <li>
-        <a
-          href="/#projects"
-          class="hover:text-gray-500 menuItem dark:hover:text-gray-300"
-          >Projects</a
-        >
-      </li>
-      <li>
-        <a
-          href="/#about"
-          class="hover:text-gray-500 menuItem dark:hover:text-gray-300">About</a
-        >
-      </li>
-      <li>
-        <a
-          href="/#contact"
-          class="hover:text-gray-500 menuItem dark:hover:text-gray-300"
-          >Contact</a
-        >
-      </li>
-      <li>
-        <a
-          href="/tags"
-          class="hover:text-gray-500 menuItem dark:hover:text-gray-300">Tags</a
-        >
-      </li>
-      <li>
-        <a
-          href="/blog"
-          class="hover:text-gray-500 menuItem dark:hover:text-gray-300">Blog</a
-        >
-      </li>
+      {
+        navigation.map(nav => (
+          <li>
+            {!nav.newTab && (
+              <a
+                href={nav.href}
+                class="hover:text-gray-500 menuItem dark:hover:text-gray-300"
+              >
+                {nav.title}
+              </a>
+            )}
+
+            {nav.newTab && (
+              <a
+                href={nav.href}
+                class="hover:text-gray-500 menuItem dark:hover:text-gray-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {nav.title}
+              </a>
+            )}
+          </li>
+        ))
+      }
     </ul>
   </nav>
 </header>
