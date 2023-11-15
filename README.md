@@ -1,54 +1,33 @@
-# Astro Starter Kit: Basics
+# Astro Portfolio Starter
 
-```sh
-npm create astro@latest -- --template basics
-```
+A simple portfolio starter and blog theme for Astro.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+![screenshot](https://github.com/drehimself/astro-portfolio-starter/assets/4316355/f90c4cbb-b1cd-4abf-af48-672f99dda925)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Demo URL
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+[https://astro-portfolio-starter-demo.netlify.com](https://astro-portfolio-starter-demo.netlify.com)
 
-## 🚀 Project Structure
+## Features
 
-Inside of your Astro project, you'll see the following folders and files:
+- Clean and minimal design
+- [Tailwind CSS](https://tailwindcss.com) using [the astro integration](https://docs.astro.build/en/guides/integrations-guide/tailwind/).
+- Blog with MDX markdown content for posts. Also supports Vue and React components directly within the Markdown.
+- Theme Switcher with Light and Dark Mode
+- View Transitions using [Astro's implementation](https://docs.astro.build/en/guides/view-transitions/)
+- Tags for posts
+- Basic pagination
+- Syntax highlighting
+- Illustrations from [unDraw](https://undraw.co)
+- 404 Page
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Installation
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+1. Clone the repo: `git clone https://github.com/drehimself/astro-portfolio-starter.git`
+1. `cd astro-portfolio-starter`
+1. `npm install`
+1. `npm run dev` to start a local dev server. `npm run build` to build app for production.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Notes
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Based off my other project built in Gridsome a few years ago: [Gridsome Portfolio Starter](https://github.com/drehimself/gridsome-portfolio-starter)
