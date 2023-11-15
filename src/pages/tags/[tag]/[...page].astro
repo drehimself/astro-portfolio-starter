@@ -1,0 +1,31 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import PostsList from '@/components/PostsList.astro'
+import { getCollection } from 'astro:content'
+import { sortPostsByDateDesc } from '@/utils/post-utils.ts'
+import { type CollectionEntry } from 'astro:content'
+import type { GetStaticPathsOptions } from 'astro'
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const posts: Array<CollectionEntry<'posts'>> = (
+    await getCollection('posts')
+  ).sort(sortPostsByDateDesc)
+  const tags = [...new Set(posts.map(post => post.data.tags).flat())]
+
+  return tags.flatMap(tag => {
+    const tagPosts = posts.filter(post => post.data.tags.includes(tag))
+
+    return paginate(tagPosts, {
+      pageSize: 2,
+      params: { tag },
+      props: { tag },
+    })
+  })
+}
+
+const { tag, page } = Astro.props
+---
+
+<Layout title="Astro Portfolio Starter">
+  <PostsList page={page} posts={page.data} tag={tag} />
+</Layout>
