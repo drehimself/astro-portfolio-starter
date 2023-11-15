@@ -20,7 +20,7 @@ const pathname = Astro.url.pathname.split('/')[1]
   <nav
     class="container mx-auto flex flex-wrap items-center justify-between py-6 px-4 xl:px-0"
   >
-    <div>
+    <div class="h-12">
       <a href="/">
         <Image
           src={logoForLight}
@@ -155,16 +155,6 @@ const pathname = Astro.url.pathname.split('/')[1]
 </header>
 
 <script>
-  function getTheme() {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-      return localStorage.getItem('theme') || ''
-    }
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark'
-    }
-    return 'light'
-  }
-
   document.addEventListener('astro:page-load', () => {
     const moonIcon = document.querySelector('#moonIcon') as Element
     const sunIcon = document.querySelector('#sunIcon') as Element
@@ -174,9 +164,6 @@ const pathname = Astro.url.pathname.split('/')[1]
     const themeToggle = document.querySelector('#themeToggle') as Element
     const mobileNav = document.querySelector('#mobileNav') as Element
     const hamburgerMenu = document.querySelector('#hamburgerMenu') as Element
-
-    const theme = getTheme()
-    setInitialTheme(theme)
 
     themeToggle.addEventListener('click', handleToggleTheme)
 
@@ -218,20 +205,6 @@ const pathname = Astro.url.pathname.split('/')[1]
       mobileNav.classList.toggle('hidden')
     }
 
-    function setInitialTheme(theme: string) {
-      if (theme === 'light') {
-        document.documentElement.classList.remove('dark')
-        logoForLight.classList.remove('hidden')
-        moonIcon.classList.remove('hidden')
-      } else {
-        document.documentElement.classList.add('dark')
-        logoForDark.classList.remove('hidden')
-        sunIcon.classList.remove('hidden')
-      }
-
-      window.localStorage.setItem('theme', theme)
-    }
-
     function handleToggleTheme(event: Event) {
       event.preventDefault()
 
@@ -256,8 +229,11 @@ const pathname = Astro.url.pathname.split('/')[1]
       mobileNav.classList.add('hidden')
     }
   })
+</script>
 
+<script>
   // For view transitions to work without FOUC
+  // https://docs.astro.build/en/tutorials/add-view-transitions/#update-scripts
   document.addEventListener('astro:after-swap', () => {
     const moonIcon = document.querySelector('#moonIcon') as Element
     const sunIcon = document.querySelector('#sunIcon') as Element
@@ -266,6 +242,19 @@ const pathname = Astro.url.pathname.split('/')[1]
 
     const theme = getTheme()
     setInitialTheme(theme)
+
+    function getTheme() {
+      if (
+        typeof localStorage !== 'undefined' &&
+        localStorage.getItem('theme')
+      ) {
+        return localStorage.getItem('theme') || ''
+      }
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+      }
+      return 'light'
+    }
 
     function setInitialTheme(theme: string) {
       if (theme === 'light') {
