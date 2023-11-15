@@ -66,9 +66,9 @@ const {
             &larr; Prev
           </a>
         ) : (
-          <a href="#" class="invisible">
+          <button class="disabled:opacity-50" disabled>
             &larr; Prev
-          </a>
+          </button>
         )}
         <div>
           Page {page.currentPage} of {page.lastPage}
@@ -81,9 +81,9 @@ const {
             Next &rarr;
           </a>
         ) : (
-          <a href="#" class="invisible">
+          <button class="disabled:opacity-50" disabled>
             Next &rarr;
-          </a>
+          </button>
         )}
       </div>
     )
