@@ -2,7 +2,7 @@
 
 A simple portfolio starter and blog theme for Astro.
 
-![screenshot](https://github.com/drehimself/astro-portfolio-starter/assets/4316355/f90c4cbb-b1cd-4abf-af48-672f99dda925)
+![screenshot](https://github.com/drehimself/astro-portfolio-starter/assets/4316355/23b26ca9-8a7a-4cc3-a1b7-efa5a4f69d63)
 
 ## Demo URL
 
