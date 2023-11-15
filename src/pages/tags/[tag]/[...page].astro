@@ -26,6 +26,6 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 const { tag, page } = Astro.props
 ---
 
-<Layout title="Astro Portfolio Starter">
+<Layout title={`Tag: ${tag}`}>
   <PostsList page={page} posts={page.data} tag={tag} />
 </Layout>

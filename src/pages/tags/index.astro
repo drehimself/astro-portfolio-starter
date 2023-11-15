@@ -7,7 +7,7 @@ const posts: Array<CollectionEntry<'posts'>> = await getCollection('posts')
 const tags = [...new Set(posts.map(post => post.data.tags).flat())]
 ---
 
-<Layout title="Astro Portfolio Starter">
+<Layout title="Tags">
   <section
     class="mx-auto max-w-3xl w-full dark:text-gray-100 mt-40 px-4 xl:px-0 mb-20"
   >

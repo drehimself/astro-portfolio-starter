@@ -15,6 +15,6 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 const { page } = Astro.props as { page: Page<CollectionEntry<'posts'>> }
 ---
 
-<Layout title="Astro Portfolio Starter">
+<Layout title="Blog">
   <PostsList page={page} posts={page.data} />
 </Layout>
