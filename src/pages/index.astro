@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import IconCheckmark from '@/components/IconCheckmark.astro'
+import Link from '@/components/Link.astro'
 import { Image } from 'astro:assets'
 import developerImage from '@/images/developer.svg'
 import mindMapImage from '@/images/mind-map.svg'
@@ -156,18 +157,12 @@ import avatarImage from '@/images/avatar.png'
 
         <p class="dark:text-gray-100 mt-6">
           Static sites cannot submit forms on their own. However, services like
-          <a
-            href="https://www.netlify.com/docs/form-handling"
-            class="font-semibold text-indigo-700 dark:text-indigo-400 hover:underline"
-          >
+          <Link href="https://www.netlify.com/docs/form-handling" newTab>
             Netlify Forms
-          </a>
+          </Link>
            or
-          <a
-            href="https://formspree.io/"
-            class="font-semibold text-indigo-700 dark:text-indigo-400 hover:underline"
-            >FormSpree</a
-          > can help you do this without a backend.
+          <Link href="https://formspree.io" newTab>FormSpree</Link>
+           can help you do this without a backend.
         </p>
 
         <div class="mt-12">

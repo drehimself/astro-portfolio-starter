@@ -1,0 +1,32 @@
+---
+interface Props {
+  href: string
+  newTab?: boolean
+}
+
+const { href, newTab = false } = Astro.props
+---
+
+{
+  !newTab && (
+    <a
+      href={href}
+      class="font-semibold text-indigo-700 dark:text-indigo-400 hover:underline"
+    >
+      <slot />
+    </a>
+  )
+}
+
+{
+  newTab && (
+    <a
+      href={href}
+      class="font-semibold text-indigo-700 dark:text-indigo-400 hover:underline"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <slot />
+    </a>
+  )
+}
