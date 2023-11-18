@@ -27,5 +27,5 @@ const { tag, page } = Astro.props
 ---
 
 <Layout title={`Tag: ${tag}`}>
-  <PostsList page={page} posts={page.data} tag={tag} />
+  <PostsList page={page} posts={page.data} tag={tag} total={page.total} />
 </Layout>
