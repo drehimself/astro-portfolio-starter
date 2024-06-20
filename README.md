@@ -6,7 +6,7 @@ A simple portfolio starter and blog theme for Astro.
 
 ## Demo URL
 
-[https://astro-portfolio-starter-demo.netlify.com](https://astro-portfolio-starter-demo.netlify.com)
+[https://astro-portfolio-starter-demo.netlify.app](https://astro-portfolio-starter-demo.netlify.app)
 
 ## Features
 
