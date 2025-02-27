@@ -9,7 +9,7 @@ const { title, showNewsletter = true } = Astro.props
 import '@fontsource-variable/inter'
 import NavComponent from '@/components/NavComponent.astro'
 import NewsletterSection from '@/components/NewsletterSection.astro'
-import { ViewTransitions } from 'astro:transitions'
+import { ClientRouter } from 'astro:transitions'
 ---
 
 <!doctype html>
@@ -21,7 +21,7 @@ import { ViewTransitions } from 'astro:transitions'
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title} | Astro Portfolio Starter</title>
-    <ViewTransitions />
+    <ClientRouter />
 
     <script src="@/scripts/initialize-theme.ts"></script>
   </head>
