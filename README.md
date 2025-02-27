@@ -11,7 +11,7 @@ A simple portfolio starter and blog theme for Astro.
 ## Features
 
 - Clean and minimal design
-- [Tailwind CSS](https://tailwindcss.com) using [the astro integration](https://docs.astro.build/en/guides/integrations-guide/tailwind/).
+- [Tailwind CSS v4](https://tailwindcss.com).
 - Blog with MDX markdown content for posts. Also supports Vue and React components directly within the Markdown.
 - Theme Switcher with Light and Dark Mode
 - View Transitions using [Astro's implementation](https://docs.astro.build/en/guides/view-transitions/)
