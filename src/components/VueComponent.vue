@@ -18,14 +18,14 @@ function resetCounter() {
     <div class="flex text-base gap-4 mt-2">
       <button
         @click="increment"
-        class="bg-green-500 text-white rounded px-2 py-2"
+        class="bg-green-500 text-white rounded-sm px-2 py-2"
       >
         Increment
       </button>
 
       <button
         @click="resetCounter"
-        class="bg-green-500 text-white rounded px-2 py-2"
+        class="bg-green-500 text-white rounded-sm px-2 py-2"
       >
         Reset
       </button>

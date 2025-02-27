@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+/* Plugins */
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* Theme Customizations */
+@theme {
+  --font-sans:
+    'InterVariable', 'Inter', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Toggle dark mode manually */
+@custom-variant dark (&:where(.dark, .dark *));

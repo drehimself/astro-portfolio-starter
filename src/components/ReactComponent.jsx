@@ -17,14 +17,14 @@ export default function ReactCounter() {
       <div className="flex gap-4 text-base mt-2">
         <button
           onClick={increment}
-          className="bg-sky-500 text-white rounded px-2 py-2"
+          className="bg-sky-500 text-white rounded-sm px-2 py-2"
         >
           Increment
         </button>
 
         <button
           onClick={resetCounter}
-          className="bg-sky-500 text-white rounded px-2 py-2"
+          className="bg-sky-500 text-white rounded-sm px-2 py-2"
         >
           Reset
         </button>
